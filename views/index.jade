@@ -1,17 +1,15 @@
 extends layout
 
 block content
-  if error
-    div #{error}
-  if success
-    div #{success}
   span Login
-  form(name="login", action="/login/post", method="POST")
+  form(name="login", action="/login", method="POST")
     input(type="text", name="user")
     input(type="password", name="pass")
     input(type="submit", value="Log In")
+  form(name="logout",action="/logout", method="POST")
+    input(type="submit", value="Log Out")
   span Sign Up
-  form(name="signup", action="/create/post", method="POST")
+  form(name="signup", action="/register", method="POST")
     input(type="text", name="user")
     input(type="password", name="pass")
     input(type="password", name="confirm-pass")

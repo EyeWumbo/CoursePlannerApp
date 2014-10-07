@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+  form(action='/courses/new', method='POST')
+    span Course Code
+    input(name='code', type='text')
+    span Course Name
+    input(name='name', type='text')
+    input(name='submit', type='submit', value='Submit')

@@ -16,6 +16,7 @@
     "mongoose": "*",
     "connect-flash": "*",
     "express-session": "*",
-    "cookie-parser": "*"
+    "cookie-parser": "*",
+    "bcrypt-nodejs": "*"
   }
 }
