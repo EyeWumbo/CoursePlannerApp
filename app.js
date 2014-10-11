@@ -40,6 +40,7 @@ app.get('/courses', routes.courses);
 app.post('/logout', routes.logout);
 app.get('/courses/new', routes.courses);
 app.post('/courses/new', routes.courses);
+app.get('/courses/:id', routes.courses);
 
 
 
@@ -74,6 +75,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-var server = app.listen(1337, function() {});
+var server = app.listen(process.env.PORT, function() { console.log('Running on ' + process.env.PORT) });
 
 module.exports = app;

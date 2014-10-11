@@ -13,10 +13,14 @@ var validateLogin = function(req, res){
 
 router.get('/courses', function(req, res){
   validateLogin(req, res);
-  res.render('courses/index', {
-    error: req.flash('error'), 
-    success: req.flash('success') 
+  Course.find({}, function(err, courses) {
+    res.render('courses/index', {
+      error: req.flash('error'), 
+      success: req.flash('success'),
+      courses: courses
+    });
   });
+  
 });
 
 router.get('/courses/new', function(req, res){
@@ -61,6 +65,13 @@ router.post('/courses/new', function(req, res){
     })
   }
   
-})
+});
+
+router.get('/courses/:id', function(req, res){
+  console.log(req.params.id);
+  Course.findById(req.params.id, function(err, course){
+    res.redirect('/courses/show', { course: course });
+  });
+});
 
 module.exports = router;

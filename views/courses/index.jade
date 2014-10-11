@@ -1,4 +1,5 @@
 extends ../layout
 
 block content
-  h3 Hello!
+  - for(var course in courses)
+    a(href='/courses/' + courses[course]._id)= courses[course]._id
